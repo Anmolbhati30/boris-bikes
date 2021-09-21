@@ -1,6 +1,8 @@
 require 'van'
 
 describe Van do
+  let(:garage) { double :garage }
+  
   it "Create a new Van object" do
     van = Van.new
   end
@@ -18,6 +20,10 @@ describe Van do
 
   it "initializes with a default capacity" do
     expect(subject.capacity).to eq Van.DEFAULT_CAPACITY
+  end
+
+  it "Returns error message when no bikes available" do
+    expect { subject.drop_off_at(garage) }.to raise_error 'No bikes available!'
   end
 
 end

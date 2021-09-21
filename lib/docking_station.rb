@@ -28,6 +28,10 @@ class DockingStation
     return bike
   end
 
+  # def load_broken_bikes_into(van)
+  #   fail if no_broken_bikes?
+  # end
+
   private 
   def full? 
     return @bikes.length >= @capacity
@@ -36,4 +40,8 @@ class DockingStation
   def empty?
     return @bikes.empty?
   end
+  
+  # def no_broken_bikes?
+  #   return @bikes.select {|bike| !bike.working? } == 0
+  # end
 end

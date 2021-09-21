@@ -9,9 +9,14 @@ class Van
   
   def initialize(capacity = Van.DEFAULT_CAPACITY)
     @capacity = capacity
+    @bikes = []
   end
 
   def collect_from(station)
-  
+    
+  end
+
+  def drop_off_at(garage)
+    fail "No bikes available!" if @bikes.empty?
   end
 end
