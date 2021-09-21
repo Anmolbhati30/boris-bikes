@@ -7,7 +7,6 @@ describe Van do
 
   it  { is_expected.to respond_to(:collect_from).with(1).argument }
 
-
   it  "Returns available capacity" do
     expect(subject.capacity).to be_a(Integer)
   end
