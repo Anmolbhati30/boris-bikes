@@ -47,6 +47,16 @@ describe DockingStation do
     expect { station.dock(Bike.new) }.to raise_error 'Docking station is full!'
   end
 
+  it "Doesn't release broken bikes" do
+    station = DockingStation.new
+    2.times { station.dock(Bike.new) }
+    bike = Bike.new
+    bike.report_broken
+    station.dock(bike)
+    2.times { station.release_bike }
+
+    expect { station.release_bike }.to raise_error 'No bikes available!'
+  end
   
 
 end
